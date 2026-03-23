@@ -1,6 +1,6 @@
 [user]
-	email = {{ (bitwarden "item" "dotfiles GitHub user").email }}
-	name = {{ (bitwarden "item" "dotfiles GitHub user").name }}
+	email = {{ (bitwardenFields "item" "dotfiles GitHub user").email.value }}
+	name = {{ (bitwardenFields "item" "dotfiles GitHub user").name.value }}
 
 [alias]
 	last = log -1 --stat

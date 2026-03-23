@@ -1,0 +1,39 @@
+[user]
+	email = {{ (bitwarden "item" "dotfiles GitHub user").email }}
+	name = {{ (bitwarden "item" "dotfiles GitHub user").name }}
+
+[alias]
+	last = log -1 --stat
+	cp = cherry-pick
+	co = checkout
+	cl = clone
+	ci = commit
+	st = status -sb
+	br = branch
+	ft = fetch -p
+	unstage = reset HEAD --
+	dc = diff --cached
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+	cln = clean -xdn
+	cli = clean -xdi
+	clf = clean -xdf
+	cls = clean -xdf -e .idea/ -e .gradle/
+
+[color]
+	ui = true
+
+[merge]
+	ff = only
+	conflictstyle = diff3
+
+[push]
+	default = simple
+[core]
+	autocrlf = input
+
+[status]
+	showUntrackedFiles = all
+
+[init]
+	defaultBranch = main
+

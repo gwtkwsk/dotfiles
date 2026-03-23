@@ -1,0 +1,2 @@
+MD013: false  # line-length
+MD060: false  # fenced-code-language (or proper-names)

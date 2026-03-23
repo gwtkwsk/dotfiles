@@ -1,7 +1,7 @@
 Host github.com_gwtkwsk
     Hostname github.com
     User gwtkwsk
-    IdentityFile ~/.ssh/id_github_ed25519
+    IdentityFile ~/.ssh/id_github_gwtkwsk_ed25519
     IdentitiesOnly yes
     AddKeysToAgent yes
 

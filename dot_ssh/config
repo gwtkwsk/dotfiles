@@ -1,0 +1,14 @@
+Host github.com_gwtkwsk
+    Hostname github.com
+    User gwtkwsk
+    IdentityFile ~/.ssh/id_github_ed25519
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+
+Host github.com_grzegorzwitkowski
+    Hostname github.com
+    User grzegorzwitkowski
+    IdentityFile ~/.ssh/id_github_grzegorzwitkowski_ed25519
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+

@@ -1,0 +1,10 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 10
+{{- if eq .theme "catppuccin" }}
+theme = dark:Catppuccin Mocha,light:Catppuccin Latte
+{{- else if eq .theme "gruvbox" }}
+theme = dark:Gruvbox Dark,light:Gruvbox Light
+{{- else }}
+{{ fail (printf "Unsupported .theme value: %q" .theme) }}
+{{- end }}
+custom-shader = shaders/cursor_warp.glsl

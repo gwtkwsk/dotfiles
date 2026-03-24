@@ -1,0 +1,8 @@
+{{- if eq .theme "catppuccin" }}
+ZSH_THEME="robbyrussell"
+{{- else if eq .theme "gruvbox" }}
+ZSH_THEME="gruvbox"
+{{- else }}
+{{ fail (printf "Unsupported .theme value: %q" .theme) }}
+{{- end }}
+SOLARIZED_THEME="dark"

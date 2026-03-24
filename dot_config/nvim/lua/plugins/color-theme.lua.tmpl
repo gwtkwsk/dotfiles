@@ -1,0 +1,38 @@
+return {
+{{- if eq .theme "catppuccin" }}
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      flavour = "mocha",
+      transparent_background = false,
+    },
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
+{{- else if eq .theme "gruvbox" }}
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    opts = {
+      contrast = "",
+      transparent_mode = false,
+    },
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  },
+{{- else }}
+{{ fail (printf "Unsupported .theme value: %q" .theme) }}
+{{- end }}
+}

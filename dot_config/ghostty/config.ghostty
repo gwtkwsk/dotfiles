@@ -1,4 +1,0 @@
-font-family = "JetBrainsMono Nerd Font"
-font-size = 10
-theme = dark:Gruvbox Dark,light:Gruvbox Light
-custom-shader = shaders/cursor_warp.glsl

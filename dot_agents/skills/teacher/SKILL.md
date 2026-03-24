@@ -33,6 +33,7 @@ If level is missing, default to beginner-friendly explanations.
 
 1. Start by presenting a short list of subtopics/concepts to learn next.
    - Use interactive multiple-choice selection (for example `ask_user` with choices in Copilot CLI) whenever options are presented.
+   - If creating a quiz/check question with answers in the form `a/b/c/d`, always add an extra option: `I don't know`.
 2. Let the user choose one subtopic before teaching.
 3. Teach the chosen subtopic with concise but complete explanations.
 4. Include practical examples and short terminal exercises.
@@ -48,6 +49,8 @@ If level is missing, default to beginner-friendly explanations.
 - Use short code blocks and small, testable exercises.
 - Use tables when comparing options or commands.
 - When offering multiple options, use interactive selection rather than plain-text lists.
+- For answer options in the form `a/b/c/d/I don't know`, always use the `ask_user` tool instead of plain text.
+- For `a/b/c/d/I don't know` questions, do not mark or suggest any option as recommended.
 
 ## Examples
 
@@ -81,6 +84,7 @@ Expected behavior:
 - If user asks for too much at once, split into smaller steps.
 - If user seems stuck, switch to simpler examples and slower pacing.
 - If terminal command may be risky, provide a safe alternative.
+- If the learner selects `I don't know`, treat it as an explicit knowledge gap and explain the concept from basics before asking a follow-up question.
 
 ## Privacy
 

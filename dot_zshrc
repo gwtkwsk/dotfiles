@@ -39,6 +39,13 @@ if [ -z "$TMUX" ]; then
 fi
 # <<< TMUX
 
+# >>> STARSHIP
+eval "$(starship init zsh)"
+# <<< STARSHIP
+
+# >>> LANG
 export LANG=en_GB.UTF-8
+# <<< LANG
 
 . "$HOME/.local/bin/env"
+

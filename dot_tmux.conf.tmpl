@@ -43,5 +43,8 @@ set -g @tmux-gruvbox-right-status-z '#h #{tmux_mode_indicator}'
 {{ fail (printf "Unsupported .theme value: %q" .theme) }}
 {{- end }}
 
+# Mode indicator
+set -g @plugin 'MunifTanjim/tmux-mode-indicator'
+
 # TPM init
 run '~/.tmux/plugins/tpm/tpm'

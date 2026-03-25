@@ -48,7 +48,7 @@ set -g @plugin 'tmux-plugins/tmux-battery'
 set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
 set -g @tmux-gruvbox-left-status-a '#S' # tmux's session name
 set -g @tmux-gruvbox-right-status-x '%H:%M'
-set -g @tmux-gruvbox-right-status-y '#{battery_icon_charge} #{battery_percentage}'
+set -g @tmux-gruvbox-right-status-y '#{battery_icon} #{battery_percentage}'
 set -g @tmux-gruvbox-right-status-z '#h #{tmux_mode_indicator}'
 
 # Mode indicator
@@ -73,6 +73,7 @@ set -g @batt_icon_charge_tier1 '󰁼'
 set -g @batt_icon_status_charging ''
 set -g @batt_icon_status_discharging ''
 set -g @batt_icon_status_charged '󰂄'
+set -g @batt_icon_status_unknown '󰂄'
 {{- else }}
 {{ fail (printf "Unsupported .theme value: %q" .theme) }}
 {{- end }}

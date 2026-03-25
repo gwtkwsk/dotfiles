@@ -41,8 +41,3 @@ eval "$(starship init zsh)"
 export LANG=en_GB.UTF-8
 # <<< LANG
 
-# >>> TMUX
-if [ -z "$TMUX" ]; then
-  exec tmux
-fi
-# <<< TMUX

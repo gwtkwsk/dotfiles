@@ -41,6 +41,8 @@ set -g status-right "#{E:@catppuccin_status_application}"
 set -ag status-right "#{E:@catppuccin_status_session}"
 {{- else if eq .theme "gruvbox" }}
 set -g @plugin 'egel/tmux-gruvbox'
+set -g @plugin 'MunifTanjim/tmux-mode-indicator'
+set -g @plugin 'tmux-plugins/tmux-battery'
 
 # Gruvbox
 set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
@@ -48,12 +50,8 @@ set -g @tmux-gruvbox-left-status-a '#S' # tmux's session name
 set -g @tmux-gruvbox-right-status-x '%H:%M'
 set -g @tmux-gruvbox-right-status-y '#{battery_icon} #{battery_percentage}'
 set -g @tmux-gruvbox-right-status-z '#h #{tmux_mode_indicator}'
-{{- else }}
-{{ fail (printf "Unsupported .theme value: %q" .theme) }}
-{{- end }}
 
 # Mode indicator
-set -g @plugin 'MunifTanjim/tmux-mode-indicator'
 set -g @mode_indicator_prefix_prompt ' 󰘳 '
 set -g @mode_indicator_copy_prompt ' 󰆏 '
 set -g @mode_indicator_sync_prompt ' 󰓦 '
@@ -64,7 +62,6 @@ set -g @mode_indicator_sync_mode_style 'bg=#cc241d,fg=#fbf1c7'
 set -g @mode_indicator_empty_mode_style 'bg=#3c3836,fg=#a89984'
 
 # Battery indicator
-set -g @plugin 'tmux-plugins/tmux-battery'
 set -g @batt_icon_charge_tier8 '󰁹'
 set -g @batt_icon_charge_tier7 '󰂂'
 set -g @batt_icon_charge_tier6 '󰂁'
@@ -76,6 +73,9 @@ set -g @batt_icon_charge_tier1 '󰁼'
 set -g @batt_icon_status_charging '󰂄'
 set -g @batt_icon_status_discharging ''
 set -g @batt_icon_status_charged ''
+{{- else }}
+{{ fail (printf "Unsupported .theme value: %q" .theme) }}
+{{- end }}
 
 # TPM init
 run '~/.tmux/plugins/tpm/tpm'

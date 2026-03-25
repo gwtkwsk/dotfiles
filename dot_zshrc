@@ -33,12 +33,6 @@ ssh-add ~/.ssh/id_github_gwtkwsk_ed25519 2>/dev/null
 ssh-add ~/.ssh/id_github_grzegorzwitkowski_ed25519 2>/dev/null
 # <<< SSH
 
-# >>> TMUX
-if [ -z "$TMUX" ]; then
-  exec tmux
-fi
-# <<< TMUX
-
 # >>> STARSHIP
 eval "$(starship init zsh)"
 # <<< STARSHIP
@@ -49,3 +43,8 @@ export LANG=en_GB.UTF-8
 
 . "$HOME/.local/bin/env"
 
+# >>> TMUX
+if [ -z "$TMUX" ]; then
+  exec tmux
+fi
+# <<< TMUX

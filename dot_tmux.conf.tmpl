@@ -19,8 +19,8 @@ bind -r L resize-pane -R 10
 
 bind r source-file ~/.tmux.conf \; display "Config reloaded!"
 
-bind | split-window -h
-bind - split-window -v
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 unbind '"'
 unbind %
 

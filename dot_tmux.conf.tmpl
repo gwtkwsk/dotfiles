@@ -43,7 +43,8 @@ set -g @catppuccin_window_current_text " #W"
 set -g @catppuccin_date_time_icon "󰥔 "
 set -g @catppuccin_date_time_text " %H:%M"
 set -g @catppuccin_tmux_mode_icon "#{?pane_in_mode,󰆏 ,#{?client_prefix,󰘳 ,#{?pane_synchronized,󰓦 ,󰆍 }}}"
-set -g @catppuccin_status_tmux_mode "#[fg=#{E:@thm_green}]#{?#{==:#{@catppuccin_status_connect_separator},yes},,#[bg=default]}#{@catppuccin_status_left_separator}#[fg=#{@thm_crust},bg=#{E:@thm_green}]#{E:@catppuccin_tmux_mode_icon}"
+set -g @catppuccin_tmux_mode_color "#{?pane_in_mode,#{E:@thm_yellow},#{?client_prefix,#{E:@thm_red},#{E:@thm_green}}}"
+set -g @catppuccin_status_tmux_mode "#[fg=#{E:@catppuccin_tmux_mode_color}]#{?#{==:#{@catppuccin_status_connect_separator},yes},,#[bg=default]}#{@catppuccin_status_left_separator}#[fg=#{@thm_crust},bg=#{E:@catppuccin_tmux_mode_color}]#{E:@catppuccin_tmux_mode_icon}"
 set -g status-right-length 100
 set -g status-left-length 100
 set -g status-left ""

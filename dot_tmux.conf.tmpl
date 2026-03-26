@@ -36,12 +36,17 @@ set -g @plugin 'catppuccin/tmux'
 # Catppuccin
 set -g @catppuccin_flavor 'mocha'
 set -g @catppuccin_window_status_style "rounded"
+set -g @catppuccin_date_time_icon "󰥔 "
+set -g @catppuccin_date_time_text " %H:%M"
+set -g @catppuccin_tmux_mode_icon "#{?pane_in_mode,󰆏 ,#{?client_prefix,󰘳 ,#{?pane_synchronized,󰓦 ,󰆍 }}}"
+set -g @catppuccin_status_tmux_mode "#[fg=#{E:@thm_green}]#{?#{==:#{@catppuccin_status_connect_separator},yes},,#[bg=default]}#{@catppuccin_status_left_separator}#[fg=#{@thm_crust},bg=#{E:@thm_green}]#{E:@catppuccin_tmux_mode_icon}"
 set -g status-right-length 100
 set -g status-left-length 100
 set -g status-left ""
-set -g status-right "#{E:@catppuccin_status_application}"
-set -ag status-right "#{E:@catppuccin_status_session}"
+set -g status-right "#{E:@catppuccin_status_date_time}"
 set -agF status-right "#{E:@catppuccin_status_battery}"
+set -ag status-right "#{E:@catppuccin_status_host}"
+set -ag status-right "#{E:@catppuccin_status_tmux_mode}"
 
 {{- else if eq .theme "gruvbox" }}
 set -g @plugin 'egel/tmux-gruvbox'

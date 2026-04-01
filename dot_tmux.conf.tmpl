@@ -20,6 +20,7 @@ bind -r K resize-pane -U 2
 bind -r L resize-pane -R 10
 
 bind r source-file ~/.tmux.conf \; display "Config reloaded!"
+bind C-l send-keys C-l \; clear-history
 bind C command-prompt -p "Window name:" "new-window -c '#{pane_current_path}' -n '%%'"
 
 bind | split-window -h -c "#{pane_current_path}"

@@ -1,0 +1,11 @@
+{{- if eq .theme "gruvbox" -}}
+[flavor]
+dark  = "gruvbox-dark"
+light = "gruvbox-dark"
+{{- else if eq .theme "catppuccin" -}}
+[flavor]
+dark  = "catppuccin-mocha"
+light = "catppuccin-mocha"
+{{- else -}}
+{{ fail (printf "Unsupported .theme value: %q" .theme) }}
+{{- end -}}

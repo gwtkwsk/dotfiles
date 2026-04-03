@@ -31,33 +31,30 @@ unbind %
 # Plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin_interpolated_options 'status-right status-left @tmux-gruvbox-right-status-y @catppuccin_battery_icon @catppuccin_battery_text'
-set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin_interpolated_options 'status-right status-left'
 
 {{- if eq .theme "catppuccin" }}
 set -g @plugin 'catppuccin/tmux'
 
 # Catppuccin
 set -g @catppuccin_flavor 'mocha'
-set -g @catppuccin_window_status_style "rounded"
+set -g @catppuccin_window_status_style "basic"
+set -g @catppuccin_status_left_separator "█"
+set -g @catppuccin_status_right_separator "█"
 set -g @catppuccin_window_text " #W"
 set -g @catppuccin_window_current_text " #W"
-set -g @catppuccin_battery_icon "#{battery_icon} "
-set -g @catppuccin_battery_text " #{battery_percentage}"
-set -g @catppuccin_date_time_icon "󰥔 "
-set -g @catppuccin_date_time_text " %H:%M"
+set -g @catppuccin_status_host_icon_bg "#{@thm_overlay_2}"
+set -g @catppuccin_status_host_icon_fg "#{@thm_mantle}"
 set -g @catppuccin_tmux_mode_icon "#{?pane_in_mode,󰆏 ,#{?client_prefix,󰘳 ,#{?pane_synchronized,󰓦 ,󰆍 }}}"
-set -g @catppuccin_tmux_mode_color "#{?pane_in_mode,#{E:@thm_yellow},#{?client_prefix,#{E:@thm_red},#{E:@thm_green}}}"
+set -g @catppuccin_tmux_mode_color "#{?pane_in_mode,#{E:@thm_yellow},#{?client_prefix,#{E:@thm_red},#{E:@thm_overlay_2}}}"
 set -g @catppuccin_status_tmux_mode "#[fg=#{E:@catppuccin_tmux_mode_color}]#{?#{==:#{@catppuccin_status_connect_separator},yes},,#[bg=default]}#{@catppuccin_status_left_separator}#[fg=#{@thm_crust},bg=#{E:@catppuccin_tmux_mode_color}]#{E:@catppuccin_tmux_mode_icon}"
 set -g status-right-length 100
 set -g status-left-length 100
 set -g status-left ""
-set -g status-right "#{E:@catppuccin_status_date_time}"
-set -ag status-right "#{E:@catppuccin_status_battery}"
-set -ag status-right "#{E:@catppuccin_status_host}"
+set -g status-right "#{E:@catppuccin_status_host}"
 set -ag status-right "#{E:@catppuccin_status_tmux_mode}"
 
-set -g @catppuccin_window_current_number_color "#{E:@thm_lavender}"
+set -g @catppuccin_window_current_number_color "#{E:@thm_teal}"
 set -g @catppuccin_window_current_text_color "#{E:@thm_mantle}"
 
 {{- else if eq .theme "gruvbox" }}
@@ -67,8 +64,6 @@ set -g @plugin 'MunifTanjim/tmux-mode-indicator'
 # Gruvbox
 set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
 set -g @tmux-gruvbox-left-status-a '#S' # tmux's session name
-set -g @tmux-gruvbox-right-status-x '%H:%M'
-set -g @tmux-gruvbox-right-status-y '#{battery_icon} #{battery_percentage}'
 set -g @tmux-gruvbox-right-status-z '#h #{tmux_mode_indicator}'
 
 # Mode indicator
@@ -83,20 +78,6 @@ set -g @mode_indicator_empty_mode_style 'bg=#3c3836,fg=#a89984'
 {{- else }}
 {{ fail (printf "Unsupported .theme value: %q" .theme) }}
 {{- end }}
-
-# Battery indicator
-set -g @batt_icon_charge_tier8 '󰁹'
-set -g @batt_icon_charge_tier7 '󰂀'
-set -g @batt_icon_charge_tier6 '󰂀'
-set -g @batt_icon_charge_tier5 '󰁿'
-set -g @batt_icon_charge_tier4 '󰁿'
-set -g @batt_icon_charge_tier3 '󰁾'
-set -g @batt_icon_charge_tier2 '󰁽'
-set -g @batt_icon_charge_tier1 '󰁼'
-set -g @batt_icon_status_charging ''
-set -g @batt_icon_status_discharging ''
-set -g @batt_icon_status_charged '󰂄'
-set -g @batt_icon_status_unknown '󰂄'
 
 # TPM init
 run '~/.tmux/plugins/tpm/tpm'

@@ -206,6 +206,9 @@ symbol = " "
 [zig]
 symbol = " "
 
+[cmd_duration]
+disabled = true
+
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"

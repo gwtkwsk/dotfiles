@@ -56,7 +56,9 @@ set -g status-right "#{E:@catppuccin_status_date_time}"
 set -ag status-right "#{E:@catppuccin_status_battery}"
 set -ag status-right "#{E:@catppuccin_status_host}"
 set -ag status-right "#{E:@catppuccin_status_tmux_mode}"
-set -g @ctp_mauve "#89B4FA
+
+set -g @catppuccin_window_current_number_color "#{E:@thm_lavender}"
+set -g @catppuccin_window_current_text_color "#{E:@thm_mantle}"
 
 {{- else if eq .theme "gruvbox" }}
 set -g @plugin 'egel/tmux-gruvbox'

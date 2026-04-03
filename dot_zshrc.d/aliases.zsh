@@ -1,5 +1,5 @@
 # >>> FOLDERS
-alias cdp="cd ~/Development/Projects/"
+alias cdp="cd ~/Programowanie/Projects/"
 # <<< FOLDERS
 
 # >>> GIT

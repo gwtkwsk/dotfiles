@@ -1,7 +1,7 @@
 {{- if eq .theme "gruvbox" -}}
 {{ include "dot_config/starship-gruvbox.toml" }}
 {{- else if eq .theme "catppuccin" -}}
-{{ include "dot_config/starship-catppuccin.toml" }}
+{{ include "dot_config/starship-nerd-font-symbols.toml" }}
 {{- else -}}
 {{ fail (printf "Unsupported .theme value: %q" .theme) }}
 {{- end -}}

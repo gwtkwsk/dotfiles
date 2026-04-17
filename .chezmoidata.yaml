@@ -1,3 +1,48 @@
-# Allowed values for `theme`: `gruvbox` or `catppuccin`.
-# This single key controls theme variants across tmux, ghostty, nvim and zsh.
-theme: catppuccin
+# Allowed values for `theme`: `gruvbox`, `catppuccin-frappe`, `catppuccin-latte`, `catppuccin-macchiato`, `catppuccin-mocha`.
+# This single key controls theme variants across tmux, ghostty, nvim, starship and yazi.
+theme: catppuccin-latte
+
+themePresets:
+  gruvbox:
+    ghosttyTheme: "dark:Gruvbox Dark,light:Gruvbox Light"
+    nvimTemplate: "themes/nvim-gruvbox.lua.tmpl"
+    starshipPalette: ""
+    starshipTemplate: "dot_config/starship-gruvbox.toml"
+    tmuxTemplate: "themes/tmux-gruvbox.conf.tmpl"
+    yaziFlavor: "gruvbox-dark"
+  catppuccin-frappe:
+    ghosttyTheme: "Catppuccin Frappe"
+    nvimFlavor: "frappe"
+    nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
+    starshipPalette: "catppuccin_frappe"
+    starshipTemplate: "dot_config/starship-nerd-font-symbols.toml"
+    tmuxFlavor: "frappe"
+    tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
+    yaziFlavor: "catppuccin-frappe"
+  catppuccin-latte:
+    ghosttyTheme: "Catppuccin Latte"
+    nvimFlavor: "latte"
+    nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
+    starshipPalette: "catppuccin_latte"
+    starshipTemplate: "dot_config/starship-nerd-font-symbols.toml"
+    tmuxFlavor: "latte"
+    tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
+    yaziFlavor: "catppuccin-latte"
+  catppuccin-macchiato:
+    ghosttyTheme: "Catppuccin Macchiato"
+    nvimFlavor: "macchiato"
+    nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
+    starshipPalette: "catppuccin_macchiato"
+    starshipTemplate: "dot_config/starship-nerd-font-symbols.toml"
+    tmuxFlavor: "macchiato"
+    tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
+    yaziFlavor: "catppuccin-macchiato"
+  catppuccin-mocha:
+    ghosttyTheme: "Catppuccin Mocha"
+    nvimFlavor: "mocha"
+    nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
+    starshipPalette: "catppuccin_mocha"
+    starshipTemplate: "dot_config/starship-nerd-font-symbols.toml"
+    tmuxFlavor: "mocha"
+    tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
+    yaziFlavor: "catppuccin-mocha"

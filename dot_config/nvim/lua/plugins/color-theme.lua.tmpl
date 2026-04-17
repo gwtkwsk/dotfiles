@@ -1,38 +1,7 @@
-return {
-{{- if eq .theme "catppuccin" }}
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    opts = {
-      flavour = "frappe",
-      transparent_background = false,
-    },
-  },
-
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
-    },
-  },
-{{- else if eq .theme "gruvbox" }}
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    opts = {
-      contrast = "",
-      transparent_mode = false,
-    },
-  },
-
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
-{{- else }}
+{{- $preset := index .themePresets .theme -}}
+{{- if not $preset -}}
 {{ fail (printf "Unsupported .theme value: %q" .theme) }}
-{{- end }}
+{{- end -}}
+return {
+{{ includeTemplate $preset.nvimTemplate $preset }}
 }

@@ -1,3 +1,7 @@
+{{- $preset := index .themePresets .theme -}}
+{{- if not $preset -}}
+{{ fail (printf "Unsupported .theme value: %q" .theme) }}
+{{- end -}}
 set-window-option -g mode-keys vi
 set-window-option -g automatic-rename on
 set-window-option -g automatic-rename-format "#{pane_current_command}"
@@ -33,51 +37,7 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin_interpolated_options 'status-right status-left'
 
-{{- if eq .theme "catppuccin" }}
-set -g @plugin 'catppuccin/tmux'
-
-# Catppuccin
-set -g @catppuccin_flavor 'frappe'
-set -g @catppuccin_window_status_style "basic"
-set -g @catppuccin_status_left_separator "█"
-set -g @catppuccin_status_right_separator "█"
-set -g @catppuccin_window_text " #W"
-set -g @catppuccin_window_current_text " #W"
-set -g @catppuccin_status_host_icon_bg "#{@thm_overlay_2}"
-set -g @catppuccin_status_host_icon_fg "#{@thm_mantle}"
-set -g @catppuccin_tmux_mode_icon "#{?pane_in_mode,󰆏 ,#{?client_prefix,󰘳 ,#{?pane_synchronized,󰓦 ,󰆍 }}}"
-set -g @catppuccin_tmux_mode_color "#{?pane_in_mode,#{E:@thm_yellow},#{?client_prefix,#{E:@thm_red},#{E:@thm_overlay_2}}}"
-set -g @catppuccin_status_tmux_mode "#[fg=#{E:@catppuccin_tmux_mode_color}]#{?#{==:#{@catppuccin_status_connect_separator},yes},,#[bg=default]}#{@catppuccin_status_left_separator}#[fg=#{@thm_crust},bg=#{E:@catppuccin_tmux_mode_color}]#{E:@catppuccin_tmux_mode_icon}"
-set -g status-right-length 100
-set -g status-left-length 100
-set -g status-left ""
-set -g status-right "#{E:@catppuccin_status_host}"
-set -ag status-right "#{E:@catppuccin_status_tmux_mode}"
-
-set -g @catppuccin_window_current_number_color "#{E:@thm_teal}"
-set -g @catppuccin_window_current_text_color "#{E:@thm_mantle}"
-
-{{- else if eq .theme "gruvbox" }}
-set -g @plugin 'egel/tmux-gruvbox'
-set -g @plugin 'MunifTanjim/tmux-mode-indicator'
-
-# Gruvbox
-set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
-set -g @tmux-gruvbox-left-status-a '#S' # tmux's session name
-set -g @tmux-gruvbox-right-status-z '#h #{tmux_mode_indicator}'
-
-# Mode indicator
-set -g @mode_indicator_prefix_prompt ' 󰘳 '
-set -g @mode_indicator_copy_prompt ' 󰆏 '
-set -g @mode_indicator_sync_prompt ' 󰓦 '
-set -g @mode_indicator_empty_prompt ' 󰆍 '
-set -g @mode_indicator_prefix_mode_style 'bg=#d79921,fg=#282828'
-set -g @mode_indicator_copy_mode_style 'bg=#458588,fg=#fbf1c7'
-set -g @mode_indicator_sync_mode_style 'bg=#cc241d,fg=#fbf1c7'
-set -g @mode_indicator_empty_mode_style 'bg=#3c3836,fg=#a89984'
-{{- else }}
-{{ fail (printf "Unsupported .theme value: %q" .theme) }}
-{{- end }}
+{{ includeTemplate $preset.tmuxTemplate $preset }}
 
 # TPM init
 run '~/.tmux/plugins/tpm/tpm'

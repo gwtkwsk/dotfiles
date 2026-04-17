@@ -1,11 +1,7 @@
-{{- if eq .theme "gruvbox" -}}
-[flavor]
-dark  = "gruvbox-dark"
-light = "gruvbox-dark"
-{{- else if eq .theme "catppuccin" -}}
-[flavor]
-dark  = "catppuccin-frappe"
-light = "catppuccin-frappe"
-{{- else -}}
+{{- $preset := index .themePresets .theme -}}
+{{- if not $preset -}}
 {{ fail (printf "Unsupported .theme value: %q" .theme) }}
 {{- end -}}
+[flavor]
+dark  = "{{ $preset.yaziFlavor }}"
+light = "{{ $preset.yaziFlavor }}"

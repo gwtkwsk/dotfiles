@@ -1,0 +1,17 @@
+set -g @plugin 'egel/tmux-gruvbox'
+set -g @plugin 'MunifTanjim/tmux-mode-indicator'
+
+# Gruvbox
+set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
+set -g @tmux-gruvbox-left-status-a '#S' # tmux's session name
+set -g @tmux-gruvbox-right-status-z '#h #{tmux_mode_indicator}'
+
+# Mode indicator
+set -g @mode_indicator_prefix_prompt ' 󰘳 '
+set -g @mode_indicator_copy_prompt ' 󰆏 '
+set -g @mode_indicator_sync_prompt ' 󰓦 '
+set -g @mode_indicator_empty_prompt ' 󰆍 '
+set -g @mode_indicator_prefix_mode_style 'bg=#d79921,fg=#282828'
+set -g @mode_indicator_copy_mode_style 'bg=#458588,fg=#fbf1c7'
+set -g @mode_indicator_sync_mode_style 'bg=#cc241d,fg=#fbf1c7'
+set -g @mode_indicator_empty_mode_style 'bg=#3c3836,fg=#a89984'

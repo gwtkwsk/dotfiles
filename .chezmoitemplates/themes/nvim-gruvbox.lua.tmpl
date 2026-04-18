@@ -1,8 +1,11 @@
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
+    init = function()
+      vim.o.background = "{{ .nvimGruvboxBackground }}"
+    end,
     opts = {
-      contrast = "",
+      contrast = "{{ .nvimGruvboxContrast }}",
       transparent_mode = false,
     },
   },

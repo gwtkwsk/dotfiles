@@ -1,24 +1,36 @@
-# Allowed values for `theme`: `gruvbox`, `catppuccin-frappe`, `catppuccin-latte`, `catppuccin-macchiato`, `catppuccin-mocha`.
+# Allowed values for `theme`: `gruvbox-dark-medium`, `gruvbox-light-medium`, `catppuccin-frappe`, `catppuccin-latte`, `catppuccin-macchiato`, `catppuccin-mocha`.
 # This single key controls theme variants across tmux, ghostty, nvim, starship and yazi.
-theme: gruvbox
+theme: gruvbox-dark-medium
 
 themePresets:
-  gruvbox:
+  gruvbox-dark-medium:
     codeColorTheme: "Gruvbox Dark Medium"
     codeIconTheme: ""
-    codePreferredDarkColorTheme: "Gruvbox Dark Medium"
-    codePreferredLightColorTheme: "Gruvbox Light Medium"
-    ghosttyTheme: "dark:Gruvbox Dark,light:Gruvbox Light"
+    ghosttyTheme: "Gruvbox Dark Medium"
+    nvimGruvboxBackground: "dark"
+    nvimGruvboxContrast: ""
     nvimTemplate: "themes/nvim-gruvbox.lua.tmpl"
     starshipPalette: ""
     starshipTemplate: "dot_config/starship-gruvbox.toml"
+    tmuxGruvboxVariant: "dark"
     tmuxTemplate: "themes/tmux-gruvbox.conf.tmpl"
     yaziFlavor: "gruvbox-dark"
+    yaziTemplate: "themes/yazi-flavor.toml.tmpl"
+  gruvbox-light-medium:
+    codeColorTheme: "Gruvbox Light Medium"
+    codeIconTheme: ""
+    ghosttyTheme: "Gruvbox Light Medium"
+    nvimGruvboxBackground: "light"
+    nvimGruvboxContrast: ""
+    nvimTemplate: "themes/nvim-gruvbox.lua.tmpl"
+    starshipPalette: ""
+    starshipTemplate: "dot_config/starship-gruvbox-light.toml"
+    tmuxGruvboxVariant: "light"
+    tmuxTemplate: "themes/tmux-gruvbox.conf.tmpl"
+    yaziTemplate: "themes/yazi-gruvbox-light.toml.tmpl"
   catppuccin-frappe:
     codeColorTheme: "Catppuccin Frappe"
     codeIconTheme: "Catppuccin Frappe"
-    codePreferredDarkColorTheme: "Catppuccin Frappe"
-    codePreferredLightColorTheme: "Catppuccin Frappe"
     ghosttyTheme: "Catppuccin Frappe"
     nvimFlavor: "frappe"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
@@ -27,11 +39,10 @@ themePresets:
     tmuxFlavor: "frappe"
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
     yaziFlavor: "catppuccin-frappe"
+    yaziTemplate: "themes/yazi-flavor.toml.tmpl"
   catppuccin-latte:
     codeColorTheme: "Catppuccin Latte"
     codeIconTheme: "Catppuccin Latte"
-    codePreferredDarkColorTheme: "Catppuccin Latte"
-    codePreferredLightColorTheme: "Catppuccin Latte"
     ghosttyTheme: "Catppuccin Latte"
     nvimFlavor: "latte"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
@@ -40,11 +51,10 @@ themePresets:
     tmuxFlavor: "latte"
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
     yaziFlavor: "catppuccin-latte"
+    yaziTemplate: "themes/yazi-flavor.toml.tmpl"
   catppuccin-macchiato:
     codeColorTheme: "Catppuccin Macchiato"
     codeIconTheme: "Catppuccin Macchiato"
-    codePreferredDarkColorTheme: "Catppuccin Macchiato"
-    codePreferredLightColorTheme: "Catppuccin Macchiato"
     ghosttyTheme: "Catppuccin Macchiato"
     nvimFlavor: "macchiato"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
@@ -53,11 +63,10 @@ themePresets:
     tmuxFlavor: "macchiato"
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
     yaziFlavor: "catppuccin-macchiato"
+    yaziTemplate: "themes/yazi-flavor.toml.tmpl"
   catppuccin-mocha:
     codeColorTheme: "Catppuccin Mocha"
     codeIconTheme: "Catppuccin Mocha"
-    codePreferredDarkColorTheme: "Catppuccin Mocha"
-    codePreferredLightColorTheme: "Catppuccin Mocha"
     ghosttyTheme: "Catppuccin Mocha"
     nvimFlavor: "mocha"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
@@ -66,3 +75,4 @@ themePresets:
     tmuxFlavor: "mocha"
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
     yaziFlavor: "catppuccin-mocha"
+    yaziTemplate: "themes/yazi-flavor.toml.tmpl"

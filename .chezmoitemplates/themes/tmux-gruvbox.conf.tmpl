@@ -2,7 +2,7 @@ set -g @plugin 'egel/tmux-gruvbox'
 set -g @plugin 'MunifTanjim/tmux-mode-indicator'
 
 # Gruvbox
-set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
+set -g @tmux-gruvbox '{{ .tmuxGruvboxVariant }}' # or 'dark256', 'light', 'light256'
 set -g @tmux-gruvbox-left-status-a '#S' # tmux's session name
 set -g @tmux-gruvbox-right-status-z '#h #{tmux_mode_indicator}'
 

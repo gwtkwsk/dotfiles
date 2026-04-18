@@ -1,0 +1,20 @@
+{{- $preset := index .themePresets .theme -}}
+{{- if not $preset -}}
+{{ fail (printf "Unsupported .theme value: %q" .theme) }}
+{{- end }}
+{
+    "github.copilot.chat.agent.autoFix": true,
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.chat.githubMcpServer.readonly": true,
+    "github.copilot.chat.githubMcpServer.enabled": false,
+    "workbench.preferredDarkColorTheme": {{ $preset.codePreferredDarkColorTheme | toJson }},
+    "workbench.preferredLightColorTheme": {{ $preset.codePreferredLightColorTheme | toJson }},
+    "window.autoDetectColorScheme": true,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', monospace",
+    "workbench.colorTheme": {{ $preset.codeColorTheme | toJson }},
+{{- if $preset.codeIconTheme }}
+    "workbench.iconTheme": {{ $preset.codeIconTheme | toJson }},
+{{- end }}
+    "window.zoomLevel": 0.3,
+    "chat.viewSessions.enabled": false
+}

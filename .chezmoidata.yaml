@@ -4,6 +4,10 @@ theme: catppuccin-latte
 
 themePresets:
   gruvbox:
+    codeColorTheme: "Gruvbox Dark Medium"
+    codeIconTheme: ""
+    codePreferredDarkColorTheme: "Gruvbox Dark Medium"
+    codePreferredLightColorTheme: "Gruvbox Light Hard"
     ghosttyTheme: "dark:Gruvbox Dark,light:Gruvbox Light"
     nvimTemplate: "themes/nvim-gruvbox.lua.tmpl"
     starshipPalette: ""
@@ -11,6 +15,10 @@ themePresets:
     tmuxTemplate: "themes/tmux-gruvbox.conf.tmpl"
     yaziFlavor: "gruvbox-dark"
   catppuccin-frappe:
+    codeColorTheme: "Catppuccin Frappe"
+    codeIconTheme: "Catppuccin Frappe"
+    codePreferredDarkColorTheme: "Catppuccin Frappe"
+    codePreferredLightColorTheme: "Catppuccin Frappe"
     ghosttyTheme: "Catppuccin Frappe"
     nvimFlavor: "frappe"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
@@ -20,6 +28,10 @@ themePresets:
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
     yaziFlavor: "catppuccin-frappe"
   catppuccin-latte:
+    codeColorTheme: "Catppuccin Latte"
+    codeIconTheme: "Catppuccin Latte"
+    codePreferredDarkColorTheme: "Catppuccin Latte"
+    codePreferredLightColorTheme: "Catppuccin Latte"
     ghosttyTheme: "Catppuccin Latte"
     nvimFlavor: "latte"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
@@ -29,6 +41,10 @@ themePresets:
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
     yaziFlavor: "catppuccin-latte"
   catppuccin-macchiato:
+    codeColorTheme: "Catppuccin Macchiato"
+    codeIconTheme: "Catppuccin Macchiato"
+    codePreferredDarkColorTheme: "Catppuccin Macchiato"
+    codePreferredLightColorTheme: "Catppuccin Macchiato"
     ghosttyTheme: "Catppuccin Macchiato"
     nvimFlavor: "macchiato"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
@@ -38,6 +54,10 @@ themePresets:
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
     yaziFlavor: "catppuccin-macchiato"
   catppuccin-mocha:
+    codeColorTheme: "Catppuccin Mocha"
+    codeIconTheme: "Catppuccin Mocha"
+    codePreferredDarkColorTheme: "Catppuccin Mocha"
+    codePreferredLightColorTheme: "Catppuccin Mocha"
     ghosttyTheme: "Catppuccin Mocha"
     nvimFlavor: "mocha"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"

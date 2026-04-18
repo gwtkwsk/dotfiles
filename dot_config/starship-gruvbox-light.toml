@@ -24,9 +24,7 @@ $python\
 $docker_context\
 $conda\
 $pixi\
-[](fg:color_bg3 bg:color_bg1)\
-$time\
-[ ](fg:color_bg1)\
+[ ](fg:color_bg3)\
 $line_break$character"""
 
 palette = 'gruvbox_light'
@@ -163,7 +161,7 @@ style = "bg:color_bg3"
 format = '[[ $symbol( $version)( $environment) ](fg:color_fg0 bg:color_bg3)]($style)'
 
 [time]
-disabled = false
+disabled = true
 time_format = "%T"
 style = "bg:color_bg1"
 format = '[[  $time ](fg:color_fg1 bg:color_bg1)]($style)'

@@ -1,7 +1,3 @@
-# Allowed values for `theme`: `gruvbox-dark-medium`, `gruvbox-light-medium`, `catppuccin-frappe`, `catppuccin-latte`, `catppuccin-macchiato`, `catppuccin-mocha`.
-# This single key controls theme variants across tmux, ghostty, nvim, starship and yazi.
-theme: gruvbox-dark-medium
-
 themePresets:
   gruvbox-dark-medium:
     codeColorTheme: "Gruvbox Dark Medium"

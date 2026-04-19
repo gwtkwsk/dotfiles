@@ -1,0 +1,11 @@
+# Copy this file to `.chezmoidata.yaml` and adjust it per machine.
+# `.chezmoidata.yaml` is intentionally gitignored.
+#
+# Allowed values for `theme`: `gruvbox-dark-medium`, `gruvbox-light-medium`,
+# `catppuccin-frappe`, `catppuccin-latte`, `catppuccin-macchiato`,
+# `catppuccin-mocha`.
+theme: gruvbox-dark-medium
+
+# Add other machine-specific values here as needed, for example:
+# is_wsl: true
+# os: linux

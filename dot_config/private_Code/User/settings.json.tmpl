@@ -1,6 +1,9 @@
+{{- if not .theme -}}
+{{ fail "Missing .theme in .chezmoidata.yaml. Copy .chezmoidata.yaml.example to .chezmoidata.yaml and set the local theme." }}
+{{- end -}}
 {{- $preset := index .themePresets .theme -}}
 {{- if not $preset -}}
-{{ fail (printf "Unsupported .theme value: %q" .theme) }}
+{{ fail (printf "Unsupported .theme value %q in .chezmoidata.yaml" .theme) }}
 {{- end }}
 {
     "github.copilot.chat.agent.autoFix": true,

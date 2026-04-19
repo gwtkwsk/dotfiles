@@ -30,6 +30,7 @@
 	default = simple
 [core]
 	autocrlf = input
+  pager = delta
 
 [status]
 	showUntrackedFiles = all
@@ -39,4 +40,10 @@
 
 [url "git@github.com:"]
   insteadOf = https://github.com/
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  side-by-side = true
 

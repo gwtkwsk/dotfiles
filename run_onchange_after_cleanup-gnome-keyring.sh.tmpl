@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -eu
+
+{{- if not (get . "is_wsl") }}
+rm -f "$HOME/.zshrc.d/gnome-keyring.zsh"
+{{- else }}
+:
+{{- end }}

@@ -8,6 +8,11 @@ themePresets:
     nvimTemplate: "themes/nvim-gruvbox.lua.tmpl"
     starshipPalette: ""
     starshipTemplate: "dot_config/starship-gruvbox.toml"
+    tmuxBellPalette:
+      bg1: "#3c3836"
+      bg2: "#504945"
+      fg1: "#ebdbb2"
+      yellow2: "#fabd2f"
     tmuxGruvboxVariant: "dark"
     tmuxTemplate: "themes/tmux-gruvbox.conf.tmpl"
     yaziFlavor: "gruvbox-dark"
@@ -21,6 +26,11 @@ themePresets:
     nvimTemplate: "themes/nvim-gruvbox.lua.tmpl"
     starshipPalette: ""
     starshipTemplate: "dot_config/starship-gruvbox-light.toml"
+    tmuxBellPalette:
+      bg1: "#ebdbb2"
+      bg2: "#d5c4a1"
+      fg1: "#3c3836"
+      yellow2: "#b57614"
     tmuxGruvboxVariant: "light"
     tmuxTemplate: "themes/tmux-gruvbox.conf.tmpl"
     yaziTemplate: "themes/yazi-gruvbox-light.toml.tmpl"

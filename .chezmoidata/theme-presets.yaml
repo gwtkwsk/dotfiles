@@ -2,7 +2,7 @@ themePresets:
   gruvbox-dark-medium:
     codeColorTheme: "Gruvbox Dark Medium"
     codeIconTheme: ""
-    ghosttyTheme: "Gruvbox Dark Medium"
+    ghosttyTheme: "Gruvbox Dark"
     nvimGruvboxBackground: "dark"
     nvimGruvboxContrast: ""
     nvimTemplate: "themes/nvim-gruvbox.lua.tmpl"
@@ -20,7 +20,7 @@ themePresets:
   gruvbox-light-medium:
     codeColorTheme: "Gruvbox Light Medium"
     codeIconTheme: ""
-    ghosttyTheme: "Gruvbox Light Medium"
+    ghosttyTheme: "Gruvbox Light"
     nvimGruvboxBackground: "light"
     nvimGruvboxContrast: ""
     nvimTemplate: "themes/nvim-gruvbox.lua.tmpl"

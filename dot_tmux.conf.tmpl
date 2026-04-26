@@ -16,6 +16,13 @@ setw -g pane-base-index 1
 set -g renumber-windows on
 set -g status-position top
 set -g bell-action any
+set -g default-terminal "screen-256color"
+# Tell tmux which terminal families support 24-bit color so it can pass RGB through to apps like Neovim.
+set -g terminal-features[200] "xterm*:RGB"
+set -g terminal-features[201] "screen*:RGB"
+set -g terminal-features[202] "tmux*:RGB"
+set -g terminal-features[203] "wezterm*:RGB"
+set -g terminal-features[204] "ghostty*:RGB"
 
 # Keys
 bind -r h select-pane -L

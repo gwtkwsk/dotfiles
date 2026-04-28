@@ -14,7 +14,7 @@ Use this file to track progress while addressing the repository review findings.
   - Files: `run_once_install-oh-my-zsh.sh`, `run_once_before_install-ghostty-cursor-shaders.sh`, `run_once_install-tpm.sh`
   - Add `set -eu` so failed commands stop the script instead of leaving partial installs.
 
-- [ ] Quote command substitutions in gnome-keyring setup
+- [x] Quote command substitutions in gnome-keyring setup
   - File: `dot_zshrc.d/gnome-keyring.zsh`
   - Quote `eval` command substitutions to improve shell safety.
 

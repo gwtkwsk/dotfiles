@@ -5,11 +5,10 @@ if [ ! -d "$XDG_RUNTIME_DIR" ]; then
 fi
 
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-    eval $(dbus-launch --sh-syntax)
+    eval "$(dbus-launch --sh-syntax)"
 fi
 
 if [ -z "$GNOME_KEYRING_CONTROL" ]; then
-    eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh 2>/dev/null)
+    eval "$(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh 2>/dev/null)"
     export SSH_AUTH_SOCK
 fi
-

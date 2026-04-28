@@ -26,6 +26,6 @@ Use this file to track progress while addressing the repository review findings.
   - File: `dot_zshrc`
   - Check private key files exist before calling `ssh-add` to avoid silent failures on fresh systems.
 
-- [ ] Document Bitwarden prerequisites
+- [x] Document Bitwarden prerequisites
   - File: `README.md`
   - Document required Bitwarden CLI setup, vault unlock state, and expected item or attachment names used by templates.

@@ -21,11 +21,11 @@ export NVM_DIR="$HOME/.nvm"
 # <<< NODE
 
 # >>> LM STUDIO
-export PATH="$PATH:/home/grzegorz/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # <<< LM STUDIO
 
 # >>> PATH
-export PATH="$PATH:/home/grzegorz/.local/bin:/home/grzegorz/bin:/home/grzegorz/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin"
 # <<< PATH
 
 # >>> SSH
@@ -48,4 +48,3 @@ eval "$(zoxide init zsh)"
 # >>> WORKTRUNK
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 # <<< WORKTRUNK
-

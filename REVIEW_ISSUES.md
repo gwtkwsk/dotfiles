@@ -6,7 +6,7 @@ Use this file to track progress while addressing the repository review findings.
   - Files: `run_once_install-oh-my-zsh.sh`, `run_onchange_after_cleanup-gnome-keyring.sh.tmpl`, `run_onchange_after_install-yazi-packages.sh.tmpl`
   - Chezmoi run scripts must be executable, otherwise they will not run during `chezmoi apply`.
 
-- [ ] Replace hardcoded home directory paths
+- [x] Replace hardcoded home directory paths
   - File: `dot_zshrc`
   - Replace `/home/grzegorz` path entries with `$HOME` so the dotfiles are portable across users and machines.
 

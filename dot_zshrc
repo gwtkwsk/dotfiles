@@ -25,7 +25,7 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 # <<< LM STUDIO
 
 # >>> PATH
-export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/.opencode/bin"
 # <<< PATH
 
 # >>> SSH

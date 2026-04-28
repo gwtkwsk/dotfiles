@@ -10,7 +10,7 @@ Use this file to track progress while addressing the repository review findings.
   - File: `dot_zshrc`
   - Replace `/home/grzegorz` path entries with `$HOME` so the dotfiles are portable across users and machines.
 
-- [ ] Add strict error handling to run scripts
+- [x] Add strict error handling to run scripts
   - Files: `run_once_install-oh-my-zsh.sh`, `run_once_before_install-ghostty-cursor-shaders.sh`, `run_once_install-tpm.sh`
   - Add `set -eu` so failed commands stop the script instead of leaving partial installs.
 

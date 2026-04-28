@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eu
+
 GHOSTTY_DIR="$HOME/.config/ghostty"
 SHADERS_DIR="$GHOSTTY_DIR/shaders"
 

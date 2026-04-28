@@ -22,7 +22,7 @@ Use this file to track progress while addressing the repository review findings.
   - Files: `run_once_install-oh-my-zsh.sh`, `run_once_before_install-ghostty-cursor-shaders.sh`, `run_once_install-tpm.sh`
   - Check required commands are available before using them, and fail or skip with a clear message.
 
-- [ ] Guard `ssh-add` calls with key existence checks
+- [x] Guard `ssh-add` calls with key existence checks
   - File: `dot_zshrc`
   - Check private key files exist before calling `ssh-add` to avoid silent failures on fresh systems.
 

@@ -1,6 +1,12 @@
+{{- $git := get . "git" | default dict -}}
+{{- $gitUser := get $git "user" | default dict -}}
+{{- $gitEmail := get $gitUser "email" -}}
+{{- $gitName := get $gitUser "name" -}}
+{{- if not $gitEmail }}{{ fail "git.user.email must be set in .chezmoidata.yaml" }}{{- end }}
+{{- if not $gitName }}{{ fail "git.user.name must be set in .chezmoidata.yaml" }}{{- end }}
 [user]
-	email = {{ (bitwardenFields "item" "dotfiles GitHub user").email.value }}
-	name = {{ (bitwardenFields "item" "dotfiles GitHub user").name.value }}
+	email = {{ $gitEmail }}
+	name = {{ $gitName }}
 
 [alias]
 	last = log -1 --stat
@@ -46,4 +52,3 @@
 
 [delta]
   side-by-side = true
-

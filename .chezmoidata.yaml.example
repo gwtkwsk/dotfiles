@@ -6,6 +6,12 @@
 # `catppuccin-mocha`.
 theme: gruvbox-dark-medium
 
+# Required per-machine Git identity used by `dot_gitconfig.tmpl`.
+# git:
+#   user:
+#     name: Your Name
+#     email: you@example.com
+
 # Add other machine-specific values here as needed, for example:
 # is_wsl: true
 # os: linux

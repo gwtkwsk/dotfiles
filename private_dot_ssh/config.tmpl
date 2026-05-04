@@ -1,3 +1,5 @@
+{{- $sshKeys := get . "ssh_keys" | default list -}}
+{{- if has "gwtkwsk" $sshKeys }}
 Host github.com_gwtkwsk
     Hostname github.com
     User gwtkwsk
@@ -5,6 +7,8 @@ Host github.com_gwtkwsk
     IdentitiesOnly yes
     AddKeysToAgent yes
 
+{{- end }}
+{{- if has "grzegorzwitkowski" $sshKeys }}
 Host github.com_grzegorzwitkowski
     Hostname github.com
     User grzegorzwitkowski
@@ -12,3 +16,4 @@ Host github.com_grzegorzwitkowski
     IdentitiesOnly yes
     AddKeysToAgent yes
 
+{{- end }}

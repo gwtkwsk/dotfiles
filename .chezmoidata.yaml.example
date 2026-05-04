@@ -18,3 +18,10 @@ theme: gruvbox-dark-medium
 # Add other machine-specific values here as needed, for example:
 # is_wsl: true
 # os: linux
+
+# SSH keys to apply on this machine.
+# Available keys: gwtkwsk (personal GitHub), grzegorzwitkowski (work GitHub)
+# List only the keys you want deployed here.
+# ssh_keys:
+#   - gwtkwsk
+#   - grzegorzwitkowski

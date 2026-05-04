@@ -12,6 +12,9 @@ theme: gruvbox-dark-medium
 #     name: Your Name
 #     email: you@example.com
 
+# Path used by the `cdp` alias to quickly jump to your projects directory.
+# cdp_path: ~/Projects/
+
 # Add other machine-specific values here as needed, for example:
 # is_wsl: true
 # os: linux

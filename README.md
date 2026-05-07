@@ -43,6 +43,10 @@ On Fedora, install `zsh-autosuggestions` system-wide with `dnf`. `dot_zshrc.tmpl
 
 On Fedora, install `zsh-syntax-highlighting` system-wide with `dnf`. `dot_zshrc.tmpl` then loads `/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh` at the end of the file, as required by the plugin's installation guide.
 
+## WezTerm on WSL
+
+If `.chezmoidata.yaml` sets `is_wsl: true`, set `windows_home` to your Windows home directory, for example `/mnt/c/Users/YourWindowsUser`. `chezmoi apply` then renders the repo's WezTerm config to `{{ windows_home }}/.wezterm.lua` instead of `~/.wezterm.lua`, keeps the Windows-side entrypoint, and starts in the `WSL:FedoraLinux-43` domain while still using the repo's theme preset.
+
 ## Bitwarden prerequisites
 
 Some templates read secrets directly from Bitwarden. The vault must be unlocked, and the following item and attachment names must exist exactly as written:

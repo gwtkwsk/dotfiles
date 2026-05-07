@@ -1,0 +1,15 @@
+{{- if get . "is_wsl" -}}
+{{- $windowsHome := get . "windows_home" -}}
+{{- if not $windowsHome -}}
+{{ fail "Missing .windows_home in .chezmoidata.yaml when .is_wsl is true." }}
+{{- end }}
+#!/bin/sh
+set -eu
+
+target={{ joinPath $windowsHome ".wezterm.lua" | quote }}
+mkdir -p "$(dirname "$target")"
+chezmoi execute-template \
+  --source {{ .chezmoi.sourceDir | quote }} \
+  --file {{ joinPath .chezmoi.sourceDir "dot_wezterm.lua.tmpl" | quote }} \
+  > "$target"
+{{- end }}

@@ -21,6 +21,7 @@ prompt_engine: powerlevel10k
 
 # Add other machine-specific values here as needed, for example:
 # is_wsl: true
+# windows_home: /mnt/c/Users/YourWindowsUser
 # os: linux
 
 # SSH keys to apply on this machine.

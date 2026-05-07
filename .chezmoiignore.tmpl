@@ -1,4 +1,7 @@
 chezmoi-apply-fast.sh
+{{- if get . "is_wsl" }}
+.wezterm.lua
+{{- end }}
 {{- if not (get . "is_wsl") }}
 .zshrc.d/gnome-keyring.zsh
 {{- end }}

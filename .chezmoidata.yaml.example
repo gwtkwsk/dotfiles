@@ -6,6 +6,10 @@
 # `catppuccin-mocha`.
 theme: gruvbox-dark-medium
 
+# Allowed values for `prompt_engine`: `powerlevel10k`, `starship`, `none`.
+# `none` disables external prompt engines and uses the default Oh My Zsh theme.
+prompt_engine: powerlevel10k
+
 # Required per-machine Git identity used by `dot_gitconfig.tmpl`.
 # git:
 #   user:

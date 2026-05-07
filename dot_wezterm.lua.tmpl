@@ -20,7 +20,7 @@ config.font_size = 10
 config.color_scheme = "{{ $preset.weztermColorScheme }}"
 
 config.enable_tab_bar = false
-{{- if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "windows") }}
+{{- if eq .chezmoi.os "darwin" }}
 config.window_decorations = "RESIZE"
 {{- end }}
 

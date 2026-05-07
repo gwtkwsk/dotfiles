@@ -111,6 +111,20 @@ eval "$(zoxide init zsh)"
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 # <<< WORKTRUNK
 
+# >>> HISTORY
+HISTFILE="$HOME/.zhistory"
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# Completion using arrow keys based on history.
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+# <<< HISTORY
+
 # >>> ZSH SYNTAX HIGHLIGHTING
 [[ -r /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # <<< ZSH SYNTAX HIGHLIGHTING

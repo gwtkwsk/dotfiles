@@ -39,6 +39,8 @@ Supported values are `powerlevel10k`, `starship`, and `none`. `none` disables ex
 
 Powerlevel10k is installed automatically by `run_once_install-powerlevel10k.sh` into `${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`. Add and maintain your own `~/.p10k.zsh` separately if you use `prompt_engine: powerlevel10k`.
 
+On Fedora, install `zsh-autosuggestions` system-wide with `dnf`. `dot_zshrc.tmpl` then loads `/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh` when that file exists.
+
 ## Bitwarden prerequisites
 
 Some templates read secrets directly from Bitwarden. The vault must be unlocked, and the following item and attachment names must exist exactly as written:

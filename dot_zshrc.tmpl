@@ -46,9 +46,15 @@ esac
 # >>> OH-MY-ZSH
 # Keep Oh My Zsh for plugin loading (`plugins=(git)`) and auto-loading files from `$ZSH_CUSTOM`.
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git)
+plugins=(
+  git
+)
 source $ZSH/oh-my-zsh.sh
 # <<< OH-MY-ZSH
+
+# >>> ZSH AUTOSUGGESTIONS
+[[ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# <<< ZSH AUTOSUGGESTIONS
 
 # >>> EDITOR
 if [[ -n $SSH_CONNECTION ]]; then

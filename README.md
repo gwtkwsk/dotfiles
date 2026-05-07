@@ -41,6 +41,8 @@ Powerlevel10k is installed automatically by `run_once_install-powerlevel10k.sh` 
 
 On Fedora, install `zsh-autosuggestions` system-wide with `dnf`. `dot_zshrc.tmpl` then loads `/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh` when that file exists.
 
+On Fedora, install `zsh-syntax-highlighting` system-wide with `dnf`. `dot_zshrc.tmpl` then loads `/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh` at the end of the file, as required by the plugin's installation guide.
+
 ## Bitwarden prerequisites
 
 Some templates read secrets directly from Bitwarden. The vault must be unlocked, and the following item and attachment names must exist exactly as written:

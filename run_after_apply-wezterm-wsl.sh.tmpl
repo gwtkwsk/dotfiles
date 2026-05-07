@@ -2,7 +2,7 @@
 {{- $windowsHome := get . "windows_home" -}}
 {{- if not $windowsHome -}}
 {{ fail "Missing .windows_home in .chezmoidata.yaml when .is_wsl is true." }}
-{{- end }}
+{{- end -}}
 #!/bin/sh
 set -eu
 

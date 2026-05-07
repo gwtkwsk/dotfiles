@@ -15,6 +15,7 @@ themePresets:
       yellow2: "#fabd2f"
     tmuxGruvboxVariant: "dark"
     tmuxTemplate: "themes/tmux-gruvbox.conf.tmpl"
+    weztermColorScheme: "GruvboxDark"
     yaziFlavor: "gruvbox-dark"
     yaziTemplate: "themes/yazi-flavor.toml.tmpl"
   gruvbox-light-medium:
@@ -33,6 +34,7 @@ themePresets:
       yellow2: "#b57614"
     tmuxGruvboxVariant: "light"
     tmuxTemplate: "themes/tmux-gruvbox.conf.tmpl"
+    weztermColorScheme: "GruvboxLight"
     yaziTemplate: "themes/yazi-gruvbox-light.toml.tmpl"
   catppuccin-frappe:
     codeColorTheme: "Catppuccin Frappe"
@@ -44,6 +46,7 @@ themePresets:
     starshipTemplate: "dot_config/starship-nerd-font-symbols.toml"
     tmuxFlavor: "frappe"
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
+    weztermColorScheme: "Catppuccin Frappe"
     yaziFlavor: "catppuccin-frappe"
     yaziTemplate: "themes/yazi-flavor.toml.tmpl"
   catppuccin-latte:
@@ -56,6 +59,7 @@ themePresets:
     starshipTemplate: "dot_config/starship-nerd-font-symbols.toml"
     tmuxFlavor: "latte"
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
+    weztermColorScheme: "Catppuccin Latte"
     yaziFlavor: "catppuccin-latte"
     yaziTemplate: "themes/yazi-flavor.toml.tmpl"
   catppuccin-macchiato:
@@ -68,6 +72,7 @@ themePresets:
     starshipTemplate: "dot_config/starship-nerd-font-symbols.toml"
     tmuxFlavor: "macchiato"
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
+    weztermColorScheme: "Catppuccin Macchiato"
     yaziFlavor: "catppuccin-macchiato"
     yaziTemplate: "themes/yazi-flavor.toml.tmpl"
   catppuccin-mocha:
@@ -80,5 +85,6 @@ themePresets:
     starshipTemplate: "dot_config/starship-nerd-font-symbols.toml"
     tmuxFlavor: "mocha"
     tmuxTemplate: "themes/tmux-catppuccin.conf.tmpl"
+    weztermColorScheme: "Catppuccin Mocha"
     yaziFlavor: "catppuccin-mocha"
     yaziTemplate: "themes/yazi-flavor.toml.tmpl"

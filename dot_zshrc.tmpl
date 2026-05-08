@@ -118,11 +118,10 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 # <<< HISTORY
 
-# >>> FNM 
-FNM_PATH="/home/grzegorz/.local/share/fnm"
+# >>> FNM
+FNM_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "$(fnm env --shell zsh)"
 fi
 # <<< FNM
-

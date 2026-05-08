@@ -46,15 +46,14 @@ esac
 # >>> OH-MY-ZSH
 # Keep Oh My Zsh for plugin loading (`plugins=(git)`) and auto-loading files from `$ZSH_CUSTOM`.
 export ZSH="$HOME/.oh-my-zsh"
+# `zsh-syntax-highlighting` must be the last plugin so it can wrap all other widgets.
 plugins=(
   git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 # <<< OH-MY-ZSH
-
-# >>> ZSH AUTOSUGGESTIONS
-[[ -r /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# <<< ZSH AUTOSUGGESTIONS
 
 # >>> EDITOR
 if [[ -n $SSH_CONNECTION ]]; then
@@ -124,7 +123,3 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 # <<< HISTORY
-
-# >>> ZSH SYNTAX HIGHLIGHTING
-[[ -r /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# <<< ZSH SYNTAX HIGHLIGHTING

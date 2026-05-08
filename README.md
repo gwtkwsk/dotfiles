@@ -39,9 +39,7 @@ Supported values are `powerlevel10k`, `starship`, and `none`. `none` disables ex
 
 Powerlevel10k is installed automatically by `run_once_install-powerlevel10k.sh` into `${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`. Add and maintain your own `~/.p10k.zsh` separately if you use `prompt_engine: powerlevel10k`.
 
-On Fedora, install `zsh-autosuggestions` system-wide with `dnf`. `dot_zshrc.tmpl` then loads `/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh` when that file exists.
-
-On Fedora, install `zsh-syntax-highlighting` system-wide with `dnf`. `dot_zshrc.tmpl` then loads `/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh` at the end of the file, as required by the plugin's installation guide.
+`zsh-autosuggestions` and `zsh-syntax-highlighting` are installed as Oh My Zsh custom plugins by `run_once_install-zsh-autosuggestions.sh` and `run_once_install-zsh-syntax-highlighting.sh` into `${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/`. `dot_zshrc.tmpl` enables them via the `plugins=(...)` array, so no system package or per-OS path is required.
 
 ## WezTerm on WSL
 

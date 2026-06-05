@@ -24,9 +24,9 @@ prompt_engine: powerlevel10k
 # windows_home: /mnt/c/Users/YourWindowsUser
 # os: linux
 
-# SSH keys to apply on this machine.
+# SSH config entries to apply on this machine.
 # Available keys: gwtkwsk (personal GitHub), grzegorzwitkowski (work GitHub)
-# List only the keys you want deployed here.
+# List only the manually created keys you want referenced from ~/.ssh/config.
 # ssh_keys:
 #   - gwtkwsk
 #   - grzegorzwitkowski

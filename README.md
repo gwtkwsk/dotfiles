@@ -6,13 +6,8 @@ Personal dotfiles managed with [chezmoi](https://www.chezmoi.io/).
 
 1. Copy `.chezmoidata.yaml.example` to `.chezmoidata.yaml` and set machine-specific values such as `theme`, `prompt_engine`, `git.user.name`, and `git.user.email`.
 2. Install `chezmoi`.
-3. Install the Bitwarden CLI as `bw`, sign in with `bw login` (or your usual SSO flow), and unlock the vault in the shell that will run chezmoi:
-
-   ```sh
-   export BW_SESSION="$(bw unlock --raw)"
-   ```
-
-4. Keep that shell unlocked while running `chezmoi apply` or `./chezmoi-apply-fast.sh`.
+3. Manually create any SSH keys you want to use on this machine.
+4. Run `chezmoi apply` or `./chezmoi-apply-fast.sh`.
 
 ## Machine-specific Git identity
 
@@ -45,13 +40,21 @@ Powerlevel10k is installed automatically by `run_once_install-powerlevel10k.sh` 
 
 If `.chezmoidata.yaml` sets `is_wsl: true`, set `windows_home` to your Windows home directory, for example `/mnt/c/Users/YourWindowsUser`. `chezmoi apply` then renders the repo's WezTerm config to `{{ windows_home }}/.wezterm.lua` instead of `~/.wezterm.lua`, keeps the Windows-side entrypoint, and starts in the `WSL:FedoraLinux-44` domain while still using the repo's theme preset.
 
-## Bitwarden prerequisites
+## SSH keys
 
-Some templates read secrets directly from Bitwarden. The vault must be unlocked, and the following item and attachment names must exist exactly as written:
+This repo does not create or retrieve SSH keys. Create the key files manually before enabling their SSH config entries in `.chezmoidata.yaml`.
 
-| Bitwarden item | Required data | Used by |
+Expected key paths:
+
+| `ssh_keys` value | Private key path | SSH host alias |
 | --- | --- | --- |
-| `github.com gwtkwsk` | Attachments `id_github_gwtkwsk_ed25519` and `id_github_gwtkwsk_ed25519.pub` | `private_dot_ssh/private_id_github_gwtkwsk_ed25519*.tmpl` |
-| `github.com grzegorzwitkowski` | Attachments `id_github_grzegorzwitkowski_ed25519` and `id_github_grzegorzwitkowski_ed25519.pub` | `private_dot_ssh/private_id_github_grzegorzwitkowski_ed25519*.tmpl` |
+| `gwtkwsk` | `~/.ssh/id_github_gwtkwsk_ed25519` | `github.com_gwtkwsk` |
+| `grzegorzwitkowski` | `~/.ssh/id_github_grzegorzwitkowski_ed25519` | `github.com_grzegorzwitkowski` |
 
-If any of these entries are missing, chezmoi cannot render the affected templates correctly.
+For example:
+
+```sh
+ssh-keygen -t ed25519 -f ~/.ssh/id_github_gwtkwsk_ed25519 -C "gwtkwsk@github"
+```
+
+Set `ssh_keys` to the entries whose manually created key files should be referenced from `~/.ssh/config`.

@@ -72,11 +72,29 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/.opencode/b
 # <<< PATH
 
 # >>> SSH
-for ssh_key in \
-  "$HOME/.ssh/id_github_gwtkwsk_ed25519" \
-  "$HOME/.ssh/id_github_grzegorzwitkowski_ed25519"; do
+{{- $sshKeys := get . "ssh_keys" | default list }}
+{{- if gt (len $sshKeys) 0 }}
+ssh_keys=(
+{{- range $key := $sshKeys }}
+{{- $name := "" -}}
+{{- $identityFile := "" -}}
+{{- if kindIs "string" $key -}}
+{{- $name = $key -}}
+{{- else -}}
+{{- $name = get $key "name" -}}
+{{- $identityFile = get $key "identity_file" -}}
+{{- end -}}
+{{- if eq $name "" }}{{ fail "ssh_keys entries must set name" }}{{ end -}}
+{{- $safeName := $name | replace "-" "_" | replace "." "_" -}}
+{{- $identityFile = $identityFile | default (printf "~/.ssh/id_%s_ed25519" $safeName) -}}
+{{ printf "\n  \"%s\"" ($identityFile | replace "~/" "$HOME/") -}}
+{{- end }}
+)
+for ssh_key in "${ssh_keys[@]}"; do
   [[ -f "$ssh_key" ]] && ssh-add "$ssh_key" 2>/dev/null
 done
+unset ssh_keys
+{{- end }}
 # <<< SSH
 
 # >>> PROMPT

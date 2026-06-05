@@ -16,8 +16,24 @@ alias ls="eza --icons=always"
 # <<< eza
 
 # >>> GIT
-gitcl_gwtkwsk() { git clone "git@github.com_gwtkwsk:$1"; }
-gitcl_grzegorzwitkowski() { git clone "git@github.com_grzegorzwitkowski:$1"; }
+{{- $sshKeys := get . "ssh_keys" | default list }}
+{{- range $key := $sshKeys }}
+{{- $name := "" -}}
+{{- $host := "" -}}
+{{- $cloneAlias := "" -}}
+{{- if kindIs "string" $key -}}
+{{- $name = $key -}}
+{{- else -}}
+{{- $name = get $key "name" -}}
+{{- $host = get $key "host" -}}
+{{- $cloneAlias = get $key "clone_alias" -}}
+{{- end -}}
+{{- if eq $name "" }}{{ fail "ssh_keys entries must set name" }}{{ end -}}
+{{- $safeName := $name | replace "-" "_" | replace "." "_" -}}
+{{- $host = $host | default (printf "github.com_%s" $safeName) -}}
+{{- $cloneAlias = $cloneAlias | default (printf "gitcl_%s" $safeName) }}
+{{ $cloneAlias }}() { git clone "git@{{ $host }}:$1"; }
+{{- end }}
 # <<< GIT
 
 # >>> neovim

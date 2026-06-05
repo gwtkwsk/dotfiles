@@ -24,9 +24,13 @@ prompt_engine: powerlevel10k
 # windows_home: /mnt/c/Users/YourWindowsUser
 # os: linux
 
-# SSH config entries to apply on this machine.
-# Available keys: gwtkwsk (personal GitHub), grzegorzwitkowski (work GitHub)
-# List only the manually created keys you want referenced from ~/.ssh/config.
+# SSH config entries to apply on this machine. Each entry's name is used to
+# derive the SSH host alias, clone helper alias, and private key path.
 # ssh_keys:
-#   - gwtkwsk
-#   - grzegorzwitkowski
+#   - account_a
+#   - name: account_b
+#     identity_file: ~/.ssh/id_account_b_ed25519
+#     host: github.com_account_b
+#     hostname: github.com
+#     user: git
+#     clone_alias: gitcl_account_b

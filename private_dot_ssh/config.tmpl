@@ -1,19 +1,23 @@
 {{- $sshKeys := get . "ssh_keys" | default list -}}
-{{- if has "gwtkwsk" $sshKeys }}
-Host github.com_gwtkwsk
-    Hostname github.com
-    User gwtkwsk
-    IdentityFile ~/.ssh/id_github_gwtkwsk_ed25519
-    IdentitiesOnly yes
-    AddKeysToAgent yes
-
-{{- end }}
-{{- if has "grzegorzwitkowski" $sshKeys }}
-Host github.com_grzegorzwitkowski
-    Hostname github.com
-    User grzegorzwitkowski
-    IdentityFile ~/.ssh/id_github_grzegorzwitkowski_ed25519
-    IdentitiesOnly yes
-    AddKeysToAgent yes
-
+{{- range $index, $key := $sshKeys }}
+{{- $name := "" -}}
+{{- $host := "" -}}
+{{- $hostname := "github.com" -}}
+{{- $user := "git" -}}
+{{- $identityFile := "" -}}
+{{- if kindIs "string" $key -}}
+{{- $name = $key -}}
+{{- else -}}
+{{- $name = get $key "name" -}}
+{{- $host = get $key "host" -}}
+{{- $hostname = get $key "hostname" | default $hostname -}}
+{{- $user = get $key "user" | default $user -}}
+{{- $identityFile = get $key "identity_file" -}}
+{{- end -}}
+{{- if eq $name "" }}{{ fail "ssh_keys entries must set name" }}{{ end -}}
+{{- $safeName := $name | replace "-" "_" | replace "." "_" -}}
+{{- $host = $host | default (printf "github.com_%s" $safeName) -}}
+{{- $identityFile = $identityFile | default (printf "~/.ssh/id_%s_ed25519" $safeName) -}}
+{{- if gt $index 0 }}{{ printf "\n\n" }}{{ end -}}
+{{ printf "Host %s\n    Hostname %s\n    User %s\n    IdentityFile %s\n    IdentitiesOnly yes\n    AddKeysToAgent yes" $host $hostname $user $identityFile -}}
 {{- end }}

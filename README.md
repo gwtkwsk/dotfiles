@@ -42,19 +42,27 @@ If `.chezmoidata.yaml` sets `is_wsl: true`, set `windows_home` to your Windows h
 
 ## SSH keys
 
-This repo does not create or retrieve SSH keys. Create the key files manually before enabling their SSH config entries in `.chezmoidata.yaml`.
+This repo does not create or retrieve SSH keys. Create the key files manually before adding their names to `.chezmoidata.yaml`.
 
-Expected key paths:
+Simple entries derive the SSH host alias, clone helper alias, and private key path from `name`:
 
-| `ssh_keys` value | Private key path | SSH host alias |
-| --- | --- | --- |
-| `gwtkwsk` | `~/.ssh/id_github_gwtkwsk_ed25519` | `github.com_gwtkwsk` |
-| `grzegorzwitkowski` | `~/.ssh/id_github_grzegorzwitkowski_ed25519` | `github.com_grzegorzwitkowski` |
+| `.chezmoidata.yaml` value | Private key path | SSH host alias | Clone helper |
+| --- | --- | --- | --- |
+| `account_a` | `~/.ssh/id_account_a_ed25519` | `github.com_account_a` | `gitcl_account_a` |
 
 For example:
 
 ```sh
-ssh-keygen -t ed25519 -f ~/.ssh/id_github_gwtkwsk_ed25519 -C "gwtkwsk@github"
+ssh-keygen -t ed25519 -f ~/.ssh/id_account_a_ed25519 -C "account-a"
 ```
 
-Set `ssh_keys` to the entries whose manually created key files should be referenced from `~/.ssh/config`.
+```yaml
+ssh_keys:
+  - account_a
+  - name: account_b
+    identity_file: ~/.ssh/id_account_b_ed25519
+    host: github.com_account_b
+    hostname: github.com
+    user: git
+    clone_alias: gitcl_account_b
+```

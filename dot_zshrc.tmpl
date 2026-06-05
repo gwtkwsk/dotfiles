@@ -16,6 +16,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 {{- end }}
 
+export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.zshrc.d"
 
 # Set to `starship`, `powerlevel10k`, or `none`.
@@ -23,10 +24,14 @@ export ZSH_PROMPT_ENGINE="${ZSH_PROMPT_ENGINE:-{{ $promptEngine }}}"
 
 # >>> PROMPT
 # Oh My Zsh reads ZSH_THEME during startup, so this must stay above `source $ZSH/oh-my-zsh.sh`.
+POWERLEVEL10K_THEME_FILE=""
 case "$ZSH_PROMPT_ENGINE" in
   powerlevel10k)
-    if [[ -d "$ZSH_CUSTOM/themes/powerlevel10k" ]]; then
+    if [[ -r "$ZSH_CUSTOM/themes/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
       ZSH_THEME="powerlevel10k/powerlevel10k"
+    elif [[ -r "$ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
+      ZSH_THEME=""
+      POWERLEVEL10K_THEME_FILE="$ZSH/custom/themes/powerlevel10k/powerlevel10k.zsh-theme"
     else
       ZSH_THEME="robbyrussell"
     fi
@@ -45,7 +50,6 @@ esac
 
 # >>> OH-MY-ZSH
 # Keep Oh My Zsh for plugin loading (`plugins=(git)`) and auto-loading files from `$ZSH_CUSTOM`.
-export ZSH="$HOME/.oh-my-zsh"
 # `zsh-syntax-highlighting` must be the last plugin so it can wrap all other widgets.
 plugins=(
   git
@@ -53,6 +57,8 @@ plugins=(
   zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
+[[ -n "$POWERLEVEL10K_THEME_FILE" ]] && source "$POWERLEVEL10K_THEME_FILE"
+unset POWERLEVEL10K_THEME_FILE
 # <<< OH-MY-ZSH
 
 # >>> EDITOR

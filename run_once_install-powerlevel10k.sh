@@ -7,7 +7,7 @@ if ! command -v git >/dev/null 2>&1; then
   exit 1
 fi
 
-ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.zshrc.d}"
 POWERLEVEL10K_DIR="$ZSH_CUSTOM/themes/powerlevel10k"
 
 if [ ! -d "$POWERLEVEL10K_DIR" ]; then

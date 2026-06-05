@@ -43,7 +43,7 @@ Powerlevel10k is installed automatically by `run_once_install-powerlevel10k.sh` 
 
 ## WezTerm on WSL
 
-If `.chezmoidata.yaml` sets `is_wsl: true`, set `windows_home` to your Windows home directory, for example `/mnt/c/Users/YourWindowsUser`. `chezmoi apply` then renders the repo's WezTerm config to `{{ windows_home }}/.wezterm.lua` instead of `~/.wezterm.lua`, keeps the Windows-side entrypoint, and starts in the `WSL:FedoraLinux-43` domain while still using the repo's theme preset.
+If `.chezmoidata.yaml` sets `is_wsl: true`, set `windows_home` to your Windows home directory, for example `/mnt/c/Users/YourWindowsUser`. `chezmoi apply` then renders the repo's WezTerm config to `{{ windows_home }}/.wezterm.lua` instead of `~/.wezterm.lua`, keeps the Windows-side entrypoint, and starts in the `WSL:FedoraLinux-44` domain while still using the repo's theme preset.
 
 ## Bitwarden prerequisites
 

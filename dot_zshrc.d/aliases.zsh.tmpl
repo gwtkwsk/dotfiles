@@ -34,6 +34,8 @@ alias ls="eza --icons=always"
 {{- $cloneAlias = $cloneAlias | default (printf "gitcl_%s" $safeName) }}
 {{ $cloneAlias }}() { git clone "git@{{ $host }}:$1"; }
 {{- end }}
+
+alias gitbr='git branch | fzf --height=20% --reverse --info=inline | xargs git checkout'
 # <<< GIT
 
 # >>> neovim

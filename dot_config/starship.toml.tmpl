@@ -5,8 +5,24 @@
 {{- if not $preset -}}
 {{ fail (printf "Unsupported .theme value %q in .chezmoidata.yaml" .theme) }}
 {{- end -}}
-{{- if $preset.starshipPalette -}}
-palette = "{{ $preset.starshipPalette }}"
+{{- $starshipPresets := dict
+  "theme" $preset.starshipTemplate
+  "nerd-font-symbols" "dot_config/starship-nerd-font-symbols.toml"
+  "catppuccin-powerline" "dot_config/starship-catppuccin.toml"
+-}}
+{{- $starshipPresetName := get . "starship_preset" | default "theme" -}}
+{{- $starshipTemplate := index $starshipPresets $starshipPresetName -}}
+{{- if not $starshipTemplate -}}
+{{ fail (printf "Unsupported .starship_preset value %q in .chezmoidata.yaml" $starshipPresetName) }}
+{{- end -}}
+{{- $starshipPalette := get . "starship_palette" | default $preset.starshipPalette -}}
+{{- if and $starshipPalette (ne $starshipPresetName "catppuccin-powerline") -}}
+palette = "{{ $starshipPalette }}"
 
 {{ end -}}
-{{ include $preset.starshipTemplate }}
+{{- $starshipContent := include $starshipTemplate -}}
+{{- if and $starshipPalette (eq $starshipPresetName "catppuccin-powerline") -}}
+{{ $starshipContent | replace "palette = 'catppuccin_frappe'" (printf "palette = %q" $starshipPalette) }}
+{{- else -}}
+{{ $starshipContent }}
+{{- end -}}

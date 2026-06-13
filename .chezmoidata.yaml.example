@@ -8,7 +8,16 @@ theme: gruvbox-dark-medium
 
 # Allowed values for `prompt_engine`: `powerlevel10k`, `starship`, `none`.
 # `none` disables external prompt engines and uses the default Oh My Zsh theme.
-prompt_engine: powerlevel10k
+prompt_engine: starship
+
+# Allowed values for `starship_preset`: `theme`, `catppuccin-powerline`,
+# `nerd-font-symbols`.
+starship_preset: catppuccin-powerline
+
+# Optional Starship palette override. Catppuccin values are:
+# `catppuccin_frappe`, `catppuccin_latte`, `catppuccin_macchiato`,
+# `catppuccin_mocha`.
+# starship_palette: catppuccin_frappe
 
 # Required per-machine Git identity used by `dot_gitconfig.tmpl`.
 # git:

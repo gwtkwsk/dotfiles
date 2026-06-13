@@ -27,12 +27,15 @@ This works well for keeping a work identity on a MacBook and a personal identity
 Set the shell prompt renderer in the local, gitignored `.chezmoidata.yaml` file:
 
 ```yaml
-prompt_engine: powerlevel10k
+prompt_engine: starship
+starship_preset: catppuccin-powerline
 ```
 
 Supported values are `powerlevel10k`, `starship`, and `none`. `none` disables external prompt engines and falls back to the default Oh My Zsh theme. `dot_zshrc.tmpl` reads this value from `.chezmoidata.yaml` when rendering the shell config.
 
 Powerlevel10k is installed automatically by `run_once_install-powerlevel10k.sh` into `${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`. Add and maintain your own `~/.p10k.zsh` separately if you use `prompt_engine: powerlevel10k`.
+
+When `prompt_engine: starship` is enabled, choose a Starship config with `starship_preset`. Supported values are `theme`, `catppuccin-powerline`, and `nerd-font-symbols`. The `theme` value keeps the preset attached to the selected `theme`; `nerd-font-symbols` preserves the existing symbol-only preset. Set `starship_palette` to override the palette used by presets that define Catppuccin palettes.
 
 `zsh-autosuggestions` and `zsh-syntax-highlighting` are installed as Oh My Zsh custom plugins by `run_once_install-zsh-autosuggestions.sh` and `run_once_install-zsh-syntax-highlighting.sh` into `${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/`. `dot_zshrc.tmpl` enables them via the `plugins=(...)` array, so no system package or per-OS path is required.
 

@@ -37,8 +37,8 @@ themePresets:
     weztermColorScheme: "GruvboxLight"
     yaziTemplate: "themes/yazi-gruvbox-light.toml.tmpl"
   catppuccin-frappe:
-    codeColorTheme: "Catppuccin Frappe"
-    codeIconTheme: "Catppuccin Frappe"
+    codeColorTheme: "Catppuccin Frappé"
+    codeIconTheme: "catppuccin-frappe"
     ghosttyTheme: "Catppuccin Frappe"
     nvimFlavor: "frappe"
     nvimTemplate: "themes/nvim-catppuccin.lua.tmpl"
